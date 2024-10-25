@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/script.js"></script>
+    <title>SkinsPay :: Cadastro</title>
+</head>
+<body>
+    <div id="header"></div>
+ 
+    <main class="flex-fill align-items-center" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row">
+                <div class="mt-5">
+                    <h1 class="text-center mt-5">Cadastro</h1>
+                    <h6 class="text-center">Todos os campos são de preenchimento obrigatório</h6>
+                </div>
+                <form id="my-form" class="w-75 m-auto" onsubmit="cadastrar()">
+                    <h2 class="mt-5">Dados Pessoais</h2>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="apelido" class="form-label">Apelido:</label>
+                            <input type="text" class="form-control required" id="apelido" name="apelido">
+                            <span class="error-message" id="erro-apelido"></span>
+                        </div>
+                        <div class="col">
+                            <label for="nome" class="form-label">Nome Completo:</label>
+                            <input type="text" class="form-control required" id="nome" name="nome">
+                            <span class="error-message" id="erro-nome"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="cpf" class="form-label">CPF:</label>
+                            <input type="text" class="form-control required" id="cpf" name="cpf">
+                            <span class="error-message" id="erro-cpf"></span>
+                        </div>
+                        <div class="col">
+                            <label for="data-nascimento" class="form-label">Data de Nascimento:</label>
+                            <input type="date" class="form-control required" id="data-nascimento" name="data-nascimento">
+                            <span class="error-message" id="erro-data-nascimento"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="genero" class="form-label">Gênero:</label>
+                            <select class="form-select required" id="genero" name="genero">
+                                <option value="">Selecione</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <span class="error-message" id="erro-genero"></span>
+                        </div>
+                        <div class="col">
+                            <label for="telefones" class="form-label">Telefones:</label>
+                            <input type="text" class="form-control required" id="telefones" name="telefones">
+                            <span class="error-message" id="erro-telefones"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control required" id="email" name="email">
+                            <span class="error-message" id="erro-email"></span>
+                        </div>
+                        <div class="col">
+                            <label for="senha" class="form-label">Senha:</label>
+                            <input type="password" class="form-control required" id="senha" name="senha">
+                            <span class="error-message" id="erro-senha"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="confirmar-senha" class="form-label">Confirmar Senha:</label>
+                            <input type="password" class="form-control required" id="confirmar-senha" name="confirmar-senha">
+                            <span class="error-message" id="erro-confirmar-senha"></span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="mt-5">Endereço</h2>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="rua" class="form-label">Rua:</label>
+                            <input type="text" class="form-control required" id="rua" name="rua">
+                            <span class="error-message" id="erro-rua"></span>
+                        </div>
+                        <div class="col">
+                            <label for="numero" class="form-label">Número:</label>
+                            <input type="text" class="form-control required" id="numero" name="numero">
+                            <span class="error-message" id="erro-numero"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="bairro" class="form-label">Bairro:</label>
+                            <input type="text" class="form-control required" id="bairro" name="bairro">
+                            <span class="error-message" id="erro-bairro"></span>
+                        </div>
+                        <div class="col">
+                            <label for="cidade" class="form-label">Cidade:</label>
+                            <input type="text" class="form-control required" id="cidade" name="cidade">
+                            <span class="error-message" id="erro-cidade"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="estado" class="form-label">Estado:</label>
+                            <input type="text" class="form-control required" id="estado" name="estado">
+                            <span class="error-message" id="erro-estado"></span>
+                        </div>
+                        <div class="col">
+                            <label for="cep" class="form-label">CEP:</label>
+                            <input type="text" class="form-control required" id="cep" name="cep">
+                            <span class="error-message" id="erro-cep"></span>
+                        </div>
+                    </div>
+    
+                    <div class="row d-flex justify-content-between">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary" onclick="cancelarCadastro()">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/carrinho.js"></script>
+    <script src="./js/produtos.js"></script>
+    <script src="./js/Categorias.js"></script>
+    <script src="./js/formulario.js"></script>
+</body>
+</html>

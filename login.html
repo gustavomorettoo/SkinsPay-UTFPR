@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SkinsPay :: Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Login</h1>
+        <form id="login-form" class="mt-3">
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail:</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" id="senha" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var form = document.getElementById("login-form");
+
+       form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Obter os valores digitados nos campos de e-mail e senha
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+
+    // Obter os dados armazenados no localStorage
+    var cadastroData = localStorage.getItem("cadastroData");
+    if (cadastroData) {
+        var formData = JSON.parse(cadastroData);
+
+        // Verificar se o e-mail e a senha correspondem aos dados armazenados
+        if (email === formData.email && senha === formData.senha) {
+            // Login bem-sucedido, redirecionar para a página inicial ou executar outras ações necessárias
+            window.location.href = "index.html";
+        } else {
+            // Credenciais inválidas, exibir mensagem de erro
+            Swal.fire({
+                title: "Erro de login",
+                text: "Credenciais inválidas. Tente novamente.",
+                icon: "error"
+            });
+        }
+    } else {
+        // Não há dados de cadastro no localStorage, exibir mensagem de erro
+        Swal.fire({
+            title: "Erro de login",
+            text: "Não há dados de cadastro. Faça seu cadastro primeiro.",
+            icon: "error"
+        });
+    }
+
+    return false; // Impede a ação padrão de recarregar a página
+});
+
+    </script>
+    <script src="./js/formulario.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+</body>
+</html>

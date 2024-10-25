@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/script.js"></script>
+        <title>SkinsPay :: Produto</title>
+    </head>
+    <body>
+        
+        <div id="header"></div>
+
+        <hr mt-5>
+        <main class="flex-fill align-items-center" style="min-height: 100vh;">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <img src="img/produtos/ak-47-aquecimento.png" class="img-fluid" alt="Produto" id="produto-imagem">
+                    <div class="row mt-3">
+                        <div class="col-4 col-md-3">
+                            <img src="img/produtos/ak-47-aquecimento.png" class="thumbnail img-fluid" alt="Miniatura 1"
+                                onclick="changeImage('img/produto1-miniatura1.jpg')">
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <img src="img/produtos/ak-47-aquecimento.png" class="thumbnail img-fluid" alt="Miniatura 2"
+                                onclick="changeImage('img/produto1-miniatura2.jpg')">
+                        </div>
+                        <div class="col-4 col-md-3">
+                            <img src="img/produtos/ak-47-aquecimento.png" class="thumbnail img-fluid" alt="Miniatura 3"
+                                onclick="changeImage('img/produto1-miniatura3.jpg')">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="border p-4 mb-4">
+                        <h4 id="nome"></h4>
+                        <h1 id="modelo"></h1>
+                        <div class="product-details">
+                            <p id="descricao"></p>
+                            <p id="estoque"></p>
+                
+                            <p class="text-danger text-lg" id="preco"></p>
+                            <p>Float: 0.05984093</p>
+                            <p>Seed: 879</p>
+                            <p>Disponibilidade:</p>
+                            <p>Pronta entrega</p>
+                        </div>
+                
+                        <form>
+                            <div class="form-group">
+                                <label for="frete">Calcular Frete:</label>
+                                <input type="text" class="form-control" id="frete" placeholder="Digite o CEP">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Calcular</button>
+                        </form>
+                
+                        <button class="btn btn-success mt-3" onclick="adicionarCarrinho()">Comprar</button>
+                    </div>
+                </div>
+        
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h3>Características do Produto</h3>
+                    <div class="row mt-3">
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>Característica 1</li>
+                                <li>Característica 2</li>
+                                <li>Característica 3</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>Característica 4</li>
+                                <li>Característica 5</li>
+                                <li>Característica 6</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+    <script src="./js/produtos.js"></script>
+    <script src="./js/carrinho.js"></script>
+    <script src="./js/Categorias.js"></script>
+    
+</html>

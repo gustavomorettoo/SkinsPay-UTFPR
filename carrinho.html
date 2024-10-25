@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/css/estilos.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/script.js"></script>
+
+  <title>SkinsPay :: Carrinho</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div id="header"></div>
+  </nav>
+
+  <main class="flex-fill align-items-center" style="min-height: 100vh;">
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Total</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="carrinho-items">
+        <tr>
+          <td colspan="5">Carrinho vazio</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">Quantidade de Itens: <span id="quantidade-itens"></span></td>
+        </tr>
+        <tr>
+          <td colspan="3"></td>
+          <td id="carrinho-total"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <button onclick="window.location.href = 'index.html'">Continuar Comprando</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div id="carrinho">
+      <button onclick="pagar()">Pagar</button>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/app.js" type="module"></script>
+  <script src="./js/produtos.js"></script>
+  <script src="./js/carrinho.js"></script>
+  <script src="./js/Categorias.js"></script>
+  
+
+  <script>
+mostrarCarrinho();
+  </script>
+</body>
+</html>
